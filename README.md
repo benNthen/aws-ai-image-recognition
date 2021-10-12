@@ -1,5 +1,5 @@
 # AWS Image Recognition App
-A program that uses AWS API to recognize the image of the vehicle.
+A program that uses AWS API Rekognition Image's DetectLabels action to recognize the image of the vehicle.
 
 ## Using this repository
 You can run the app on your local computer using the latest version of JetBrain's PyCharm.
@@ -45,10 +45,13 @@ This vehicle is a Truck.
 ```
 ### How it works
 -----------
-The main file of interest is the `vehicle_detect.py`. It consists of two functions.
+The main file of interest is the `vehicle_detect.py`. It consists of two parts.
 
-First half of the file contains a function that connects and sends the image file as data to the AWS API 'Rekognition' 
+First half of the file contains a function that connects and sends the image file as data to the online AWS API 'Rekognition'.
+Once a connection between the program and the API has been established, the DetectLabels action is then selected and used to analyze the image.
 The matching results are returned as a string array of data that is then stored in the 'json-data.txt'. 
+(`boto3.py` is imported in this code. Its used to establish the online connection AWS API 'Rekognition'.)
+(`image_helpers.py` contains one function that extracts and reads the image file from the images folder.)
 
 ```python
 import boto3
@@ -60,11 +63,11 @@ filename = 'json-data.txt'
 # extracts JSON data related to most matched label
 def detect_labels_local_file(photoname):
 
-    client = boto3.client('rekognition') # AWS API Reference
+    client = boto3.client('rekognition') # AWS API Reference Rekognition
 
     imgbytes = image_helpers.get_image_from_file(photoname)
 
-    response = client.detect_labels(Image={'Bytes': imgbytes})
+    response = client.detect_labels(Image={'Bytes': imgbytes}) # AWS API Rekognition's 'DetectLabels' action is selected
 
     with open(filename, 'w') as f:
         for label in response['Labels']:
@@ -99,6 +102,3 @@ def main():
 Other Notes: 
 - You may wish to add your own files and store them inside the `images` folder, then provide their full file path when you run the program.
 - As of October 2021, this program only supports analysing files that are contained inside the images folder.
-- `boto3.py` is imported in this code. Its used to establish the online connection AWS API 'Rekognition'.
-- `image_helpers.py` contains one function that extracts and reads the image file from the images folder.
-
