@@ -22,18 +22,23 @@ Enter the file path for one of the pictures contained inside the `images` folder
 These are the three possible outputs :
 
 If a Bicycle image is selected
+![bike](https://user-images.githubusercontent.com/53241776/137043482-31502742-6a9e-424d-8dd3-1225c44c2fa4.jpg)
 ```
 Please enter image path: {filepath}/bike.jpg   // where {filepath} is the complete directory of the file
 This vehicle is a Bicycle.
 ```
 
 If a Car image is selected
+![car](https://user-images.githubusercontent.com/53241776/137043515-8fbaa3ab-d9c1-4974-9e5d-5f44911eab52.jpg)
+
 ```
 Please enter image path: {filepath}/car.jpg   
 This vehicle is a Car.
 ```
 
 If a Truck image is selected
+![truck](https://user-images.githubusercontent.com/53241776/137043526-9ba3d6ad-bfe5-4187-9909-a01c456a4dd9.png)
+
 ```
 Please enter image path: {filepath}/truck.jpg   
 This vehicle is a Truck.
