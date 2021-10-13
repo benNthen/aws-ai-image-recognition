@@ -29,7 +29,7 @@ These are the three possible outputs :
 If a Bicycle image is selected
 ![bike](https://user-images.githubusercontent.com/53241776/137043482-31502742-6a9e-424d-8dd3-1225c44c2fa4.jpg)
 ```
-Please enter image path: {filepath}/bike.jpg   // where {filepath} is the complete directory of the file
+Please enter image path: {filepath}/bike.jpg   // where {filepath} is the complete directory of the images folder
 This vehicle is a Bicycle.
 ```
 
