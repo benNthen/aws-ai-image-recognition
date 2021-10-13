@@ -63,16 +63,15 @@ import image_helpers
 filename = 'json-data.txt'
 
 # communicates with the AWS API 'Rekognition' to see which image matches
-# extracts JSON data related to most matched label
 def detect_labels_local_file(photoname):
 
-    client = boto3.client('rekognition') # AWS API Reference Rekognition
+    client = boto3.client('rekognition') # Communes with the AWS API Reference Rekognition
 
-    imgbytes = image_helpers.get_image_from_file(photoname)
+    imgbytes = image_helpers.get_image_from_file(photoname) # Gets the image file from the images folder
 
     response = client.detect_labels(Image={'Bytes': imgbytes}) # AWS API Rekognition's 'DetectLabels' action is selected
 
-    with open(filename, 'w') as f:
+    with open(filename, 'w') as f: # extracts JSON data related to most matched label
         for label in response['Labels']:
 
             print(label['Name'], file=f)
