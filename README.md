@@ -71,7 +71,7 @@ def detect_labels_local_file(photoname):
 
     response = client.detect_labels(Image={'Bytes': imgbytes}) # AWS API Rekognition's 'DetectLabels' action is selected
 
-    with open(filename, 'w') as f: # extracts JSON data related to most matched label
+    with open(filename, 'w') as f: # JSON data received is filtered, only Labels portion is saved onto 'json-data.txt'
         for label in response['Labels']:
 
             print(label['Name'], file=f)
@@ -104,7 +104,7 @@ def main():
 ### Understanding how the data is retrieved
 -----------
 
-When the program sends the picture file(for example `bike.jpg`) from the images folder as data to the AWS API, the resulting data returned actually looks like this:
+When the program sends the picture file(for example `bike.jpg`) from the images folder as data to the AWS API, the resulting JSON data returned actually looks like this:
 
 ```python
 {'Labels': [
