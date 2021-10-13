@@ -104,7 +104,7 @@ def main():
 ### Understanding how the data is retrieved
 -----------
 
-When the program sends the picture file from the images folder as data to the AWS API, the resulting data returned actually looks like this:
+When the program sends the picture file(for example `bike.jpg`) from the images folder as data to the AWS API, the resulting data returned actually looks like this:
 
 ```python
 {'Labels': [
@@ -117,11 +117,11 @@ When the program sends the picture file from the images folder as data to the AW
 ```
 
 The program filters the data to only display the top five matching labels that were determined by the AWS Rekognition Image's DetectLabels action. 
-These are stored an array of strings in the 'json-data.txt' as shown below.
+These are stored as an array of strings in the 'json-data.txt' as shown below.
 
 ![image](https://user-images.githubusercontent.com/53241776/137045990-bb23d947-45b2-41e0-ae04-caee9027c97a.png)
 
-The first result in this string array represents the label with the highest confidence and this is what gets displayed on the output of the program.
+The first result in this string array represents the label with the highest confidence(in this case its Bicyle) and this is what gets displayed on the output of the program.
 
 
 
