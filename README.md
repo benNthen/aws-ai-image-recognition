@@ -79,7 +79,7 @@ def detect_labels_local_file(photoname):
     return response
 ```
 
-The code below shows the second half of the file. This function will analyze the 'json-data.txt' file and extract the top most accurate result.
+The code below shows the second half of the file. This function will analyze the `json-data.txt` file and extract the top most accurate result.
 The result is then sent to the `main.py` file to be displayed as part of the output.
 
 ```python
@@ -117,7 +117,7 @@ When the program sends the picture file(for example `bike.jpg`) from the images 
 ```
 
 The program filters the data to only display the top five matching labels that were determined by the AWS Rekognition Image's DetectLabels action. 
-These are stored as an array of strings in the 'json-data.txt' as shown below.
+These are stored as an array of strings in the `json-data.txt` as shown below.
 
 ![image](https://user-images.githubusercontent.com/53241776/137045990-bb23d947-45b2-41e0-ae04-caee9027c97a.png)
 
